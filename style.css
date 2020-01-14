@@ -1,0 +1,19 @@
+.container{
+    width: 800px;
+    border: 1px solid black;
+    margin: 0px auto;
+    padding: 50px 80px;
+}
+.regInput{
+    margin: 50px 30px;
+    font-size: 22px;
+}
+
+h1{
+    text-align: center;
+    font: 45px bolder;
+}
+
+.regLabel{
+    
+}
