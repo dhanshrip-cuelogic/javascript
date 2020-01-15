@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="regStyle.css">
+    <script src="reg.js"></script>
+    
+    <title>Registration Page</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Registration Page</h1>
+
+            <div>
+
+                <div class="regInput">
+                    <label for="username" class="regLabel">Username</label><br>
+                    <input type="text" id="username" class="logInput">
+                </div>
+                <div class="regInput">
+                    <label for="fname" class="regLabel">Name</label><br>
+                    <input type="text" id="fname">&nbsp;&nbsp;
+                    <input type="text" id="lname">
+                </div>
+                <div class="regInput">
+                    <label for="gender" class="regLabel">Gender</label>
+                    &nbsp;&nbsp;&nbsp;
+                    Male<input type="radio" name="male" id="gender" class="radio">&nbsp;
+                    Female<input type="radio" name="female" id="gender" class="radio">
+                </div>
+                <div class="regInput">
+                    <label for="address" class="regLabel">Address</label><br>
+                    <textarea name="address" id="address" cols="30" rows="5" class="logInput" style="resize: none;"></textarea>
+                </div>
+                <div class="password regInput"> 
+                    <label for="password" class="regLabel">Password</label><br>
+                    <input type="password" name="password" id="password" class="logInput">
+                </div>
+
+                <div class="password regInput">
+                    <label for="confirmPass" class="regLabel"> Confirm Password</label><br>
+                    <input type="password" name="confirmPass" id="confirmPass" class="logInput">
+                </div>
+
+                <div class="regInput">
+                    <label for="profile" class="regLabel">Profile&nbsp;&nbsp;&nbsp;</label>
+                    <input type="button" value="PROFILE PICTURE">
+                </div>
+                <div class="submitbtn" style="text-align: center;"><br>
+                    <button type="button" id="submit" onclick="getData()">Submit</button>
+                </div>
+                
+            </div>         
+        </div>
+    
+    </body>
+</html>
