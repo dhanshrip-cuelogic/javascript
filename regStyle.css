@@ -11,7 +11,9 @@
 }
 .regInput{
     margin-bottom: 20px;
+    /* margin-left: 20px; */
     font-size: 15px;
+
 }
 
 h1{
@@ -38,3 +40,4 @@ text-align: left;
 .logInput{
     width: 100%;
 }
+

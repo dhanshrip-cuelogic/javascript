@@ -6,10 +6,45 @@
             Profile Page
         </title>
         <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="regStyle.css">
+        <style>
+            .profileBox{
+                margin: 100px auto 0px;
+                border-style: none;
+                border-radius: 5px;
+                width: 500px;
+                background-color: rgb(148, 219, 231);
+                text-align: center;
+            }
+            .heading{
+                font-size: 30px;
+                font-weight: bold;
+                color: dimgray;
+            }
+            .label{
+                display: inline-block;
+                width: 100px;
+                margin-right: 10px;
+                text-align: left;
+            }
+            
+        </style>       
     </head>
-
     <body>
-        
-        .
+        <div class="profileBox">
+
+            <h1 class="heading">Personal Information</h1>
+            <div>
+                <div class="label">Username</div><input type="text" id="uname" class="regInput" disabled><br>
+                <div class="label">Password</div><input type="text" id="pass" class="regInput" disabled><br>
+                <div class="label">First Name</div><input type="text" id="fname" class="regInput" disabled><br>
+                <div class="label">Last Name</div><input type="text" id="lname" class="regInput" disabled><br>
+                <div class="label">Gender</div><input type="text" id="gender" class="regInput" disabled><br>
+                <div class="label">Address</div><input type="text" id="add" class="regInput" disabled><br>
+            </div>
+            
+
+            <script src="profile.js"> </script>
+        </div>
     </body>
 </html>

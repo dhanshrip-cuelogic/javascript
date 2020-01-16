@@ -12,7 +12,7 @@
         <div class="container">
             <h1>Registration Page</h1>
 
-            <div>
+            <form id= "myform">
 
                 <div class="regInput">
                     <label for="username" class="regLabel">Username</label><br>
@@ -20,14 +20,14 @@
                 </div>
                 <div class="regInput">
                     <label for="fname" class="regLabel">Name</label><br>
-                    <input type="text" id="fname">&nbsp;&nbsp;
-                    <input type="text" id="lname">
+                    <input type="text" id="fname" placeholder="First name">&nbsp;&nbsp;
+                    <input type="text" id="lname" placeholder="Last name">
                 </div>
                 <div class="regInput">
                     <label for="gender" class="regLabel">Gender</label>
                     &nbsp;&nbsp;&nbsp;
-                    Male<input type="radio" name="male" id="gender" class="radio">&nbsp;
-                    Female<input type="radio" name="female" id="gender" class="radio">
+                    Male<input type="radio" name="gender" value="Male">&nbsp;
+                    Female<input type="radio" name="gender" value="Female">
                 </div>
                 <div class="regInput">
                     <label for="address" class="regLabel">Address</label><br>
@@ -47,11 +47,15 @@
                     <label for="profile" class="regLabel">Profile&nbsp;&nbsp;&nbsp;</label>
                     <input type="button" value="PROFILE PICTURE">
                 </div>
+
                 <div class="submitbtn" style="text-align: center;"><br>
-                    <button type="button" id="submit" onclick="getData()">Submit</button>
+                    <button type="button" id="submit" onclick="getData()">Submit</button><br><br>
+                    <a href="loginIndex.html">Login</a>
                 </div>
+
                 
-            </div>         
+                
+                   
         </div>
     
     </body>

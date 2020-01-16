@@ -1,19 +1,26 @@
 function getLogData()
 {
-    let logname = document.getElementById("username");
-    let logpass = document.getElementById("password");
+    let logname = document.getElementById("username").value;
+    let logpass = document.getElementById("password").value;
 
     let regData = JSON.parse(localStorage.getItem("values"));
 
     for(let i in regData)
     {
-        if(regData[i].uname==logname)
-        {
-            if(regData[i].password==logpass)
+        let regName= regData[i].uname;
+        if(regName==logname)
+        {      
+            let regPass=regData[i].pass;     
+            if(regPass==logpass)
             {
-                alert("login successful");
-                //redirection to todo page
+                sessionStorage.setItem('values',logname);
+                redirect();  
             }
         }
     }
+
+}
+
+function redirect(){
+   window.location.href="./profileIndex.html";
 }
