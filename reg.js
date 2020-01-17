@@ -9,6 +9,8 @@ function getData() {
     let pass= document.getElementById("password").value;
     let confirmPass = document.getElementById("confirmPass").value;
 
+    let todoObj= [];
+
     let flag = true;
 
     if(pass!=confirmPass){
@@ -31,7 +33,8 @@ function getData() {
             lname:lname,
             gender:gender,
             add:add,
-            pass:pass
+            pass:pass,
+            todoObj: []
         };
     
         let allUser=JSON.parse(localStorage.getItem('values')) || [];
@@ -40,5 +43,10 @@ function getData() {
         document.getElementById("myform").reset();
     
     }
+    redirect();
+
     
+}
+function redirect(){
+   window.location.href="./loginIndex.html";
 }

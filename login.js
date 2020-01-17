@@ -22,5 +22,5 @@ function getLogData()
 }
 
 function redirect(){
-   window.location.href="./profileIndex.html";
+   window.location.href="./todoPage.html";
 }

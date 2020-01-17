@@ -26,4 +26,3 @@ document.getElementById("fname").value=fname;
 document.getElementById("lname").value=lname;
 document.getElementById("gender").value=gender;
 document.getElementById("add").value=add;
-   

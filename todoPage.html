@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            TODO List
+        </title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="todoStyle.css">  
+        <!-- <script src="todo.js"></script> -->
+    </head>
+    <body>
+        <header>
+                <input type="button" id="profile" value="Profile" onclick=redirect();>
+                <div class="heading">
+                    <input type="text" id="name" disabled>
+                    <input type="button" id="logout" value="LOGOUT" onclick=backToLogin()>
+                </div>
+                <div class="clear"></div>
+
+
+                <div class="container">
+                    <div class="list">
+                        <div class="head">
+                            <h1>TO DO - LIST</h1>
+                        </div>
+                        <table class="table">
+                            <thead >
+                                <th>Mark Done</th>
+                                <th>Task</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Reminder</th>
+                                <th>Public</th>
+                                <th>Delete</th>
+                            </thead>
+                            
+                            <tbody id="table"></tbody>
+
+                        </table>
+
+                        <table class="addRow">
+                            <thead>
+                                <th>Task</th>
+                                <th>Date</th>
+                                <th>Reminder</th>
+                                <th>Public</th>
+                                <th>Add</th>
+                            </thead>
+                            
+
+                            <tr>
+                                <td><input type="text" id="task" placeholder="Task"></td>
+                                <td><input type="date" id="date" placeholder="Date"></td>
+                                <td><input type="checkbox" id="check"></td>
+                                <td><input type="radio" id="public" value="Yes"></td>
+                                <td><input type="button" value="Add" onclick=insertRow()></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <div class="profilePic"></div>
+                </div>
+
+                
+                <script src="todo.js"></script>
+        </header>
+    </body>
+</html>
