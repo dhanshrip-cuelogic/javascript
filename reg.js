@@ -9,22 +9,31 @@ function getData() {
     let pass= document.getElementById("password").value;
     let confirmPass = document.getElementById("confirmPass").value;
 
+    let regexPass= /([A-Z]+)([a-z]?.*)([!@#\$%\^&\*\.].*)([0-9].*)/;
+
     let todoObj= [];
 
-    let flag = true;
+    let flag = false;
 
     if(pass!=confirmPass){
         alert("Please type same password in both fields.");
-        flag=false;
         
     }
 
-    if(uname=="" || fname==""|| lname==""|| add==""|| pass==""){
+    else if(uname=="" || fname==""|| lname==""|| add==""|| pass==""){
 
         alert("Please fill all the details.");
-        flag=false;
     }
-
+    else if(pass.length<8){
+        alert("length of password should be greater than 8.")    
+        
+    }
+    else if(!(regexPass.test(pass))){
+        alert("Invalid Password");
+    }
+    else{
+        flag=true;
+    }
     if(flag==true)
     {
         let dataObj= {
@@ -41,11 +50,9 @@ function getData() {
         allUser.push(dataObj);
         localStorage.setItem("values",JSON.stringify(allUser));
         document.getElementById("myform").reset();
+        redirect();
     
     }
-    redirect();
-
-    
 }
 function redirect(){
    window.location.href="./loginIndex.html";

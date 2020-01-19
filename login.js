@@ -1,4 +1,4 @@
-function getLogData()
+ifunction getLogData()
 {
     let logname = document.getElementById("username").value;
     let logpass = document.getElementById("password").value;
