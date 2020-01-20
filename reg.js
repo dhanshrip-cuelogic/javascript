@@ -4,20 +4,34 @@ function getData() {
     let uname= document.getElementById("username").value;
     let fname= document.getElementById("fname").value;
     let lname= document.getElementById("lname").value;
-    let gender= document.querySelector('input[name="gender"]:checked').value;
+    // let gender= document.querySelector('input[name="gender"]:checked').value;
     let add= document.getElementById("address").value;
     let pass= document.getElementById("password").value;
     let confirmPass = document.getElementById("confirmPass").value;
+    let gender;
 
     let regexPass= /([A-Z]+)([a-z]?.*)([!@#\$%\^&\*\.].*)([0-9].*)/;
 
     let todoObj= [];
-
+    let temp=true;
+    let genderValue=true;
     let flag = false;
+
+    temp=checkuname(uname);
+    
+    genderValue= checkGender();
 
     if(pass!=confirmPass){
         alert("Please type same password in both fields.");
         
+    }
+
+    else if(temp==false){
+        alert("Username already exist!!");
+    }
+
+    else if(genderValue==false){
+        alert("Please select any one gender.");
     }
 
     else if(uname=="" || fname==""|| lname==""|| add==""|| pass==""){
@@ -56,4 +70,35 @@ function getData() {
 }
 function redirect(){
    window.location.href="./loginIndex.html";
+}
+
+function checkuname(uname){
+    let localData = JSON.parse(localStorage.getItem("values"));
+
+    for(let i of localData)
+    {
+        if(i.uname==uname)
+        {
+            return (false);
+            break;
+
+        }
+    } 
+}
+
+function checkGender(){
+    let a= document.getElementsByName("gender");
+    let count=0;
+    for( let i=0; i<a.length;i++)
+    {
+        if(a[i].checked==true)
+        {
+            count++;
+        }
+    }
+    if(count!=1)
+    {
+        return (false);
+    }
+
 }

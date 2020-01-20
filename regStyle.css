@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 .container{
-    width: 500px;
+    width: 800px;
     /* height: 550px; */
     border: 1px solid black;
     margin: 0px auto;
@@ -40,4 +40,8 @@ text-align: left;
 .logInput{
     width: 100%;
 }
-
+p{
+    font-size: 12px;
+    font-style: oblique;
+    color: red;
+}

@@ -27,7 +27,8 @@
                     <label for="gender" class="regLabel">Gender</label>
                     &nbsp;&nbsp;&nbsp;
                     Male<input type="radio" name="gender" value="Male">&nbsp;
-                    Female<input type="radio" name="gender" value="Female">
+                    Female<input type="radio" name="gender" value="Female">&nbsp;
+                    Other<input type="radio" name="gender" value="Other">
                 </div>
                 <div class="regInput">
                     <label for="address" class="regLabel">Address</label><br>
@@ -36,22 +37,27 @@
                 <div class="password regInput"> 
                     <label for="password" class="regLabel">Password</label><br>
                     <input type="password" name="password" id="password" class="logInput">
-                </div>
+                    <p>
+                        First word of password must be Capital <br>
+                        Password must contain atleast one special symbol and 1 numeric digit. <br>
+                        Password length must be atleast 8.
 
+                    </p>
+                </div>
                 <div class="password regInput">
                     <label for="confirmPass" class="regLabel"> Confirm Password</label><br>
                     <input type="password" name="confirmPass" id="confirmPass" class="logInput">
                 </div>
-
                 <div class="regInput">
                     <label for="profile" class="regLabel">Profile&nbsp;&nbsp;&nbsp;</label>
                     <input type="button" value="PROFILE PICTURE">
                 </div>
-
                 <div class="submitbtn" style="text-align: center;"><br>
                     <input type="button" id="submit" onclick="getData()" value="Submit"><br><br>
                     <a href="loginIndex.html">Login</a>
                 </div>
+            
+            </form>
 
                 
                 

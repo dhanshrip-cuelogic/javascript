@@ -1,18 +1,16 @@
 let sessionData = sessionStorage.getItem("values");
-    // alert(sessionData);
-    let localData = JSON.parse(localStorage.getItem("values"));
-    // alert(localData);
-    let data;
+let localData = JSON.parse(localStorage.getItem("values"));
+let data;
 
-    for(let i of localData)
+for(let i of localData)
+{
+    if(i.uname==sessionData)
     {
-        if(i.uname==sessionData)
-        {
-            data=i;
-            break;
+        data=i;
+        break;
 
-        }
-    } 
+    }
+} 
 showData();
 
 function redirect(){
@@ -28,8 +26,12 @@ function insertRow(){
     
     let task= document.getElementById("task").value;
     let date= document.getElementById("date").value;
-    let check=document.querySelector('input[id="public"]:checked').value;
+    let category= document.getElementById("category").value;
+    let check=document.querySelector('input[id="check"]:checked').value;
     let public=document.querySelector('input[id="public"]:checked').value;
+    
+    // let check=document.getElementById("check").checked;
+    // let public=document.getElementById("public").checked;
 
     let newData={
         task:task,
@@ -37,50 +39,21 @@ function insertRow(){
         check:check,
         public:public
     };
-
-    // let sessionData = sessionStorage.getItem("values");
-    // // alert(sessionData);
-    // let localData = JSON.parse(localStorage.getItem("values"));
-    // // alert(localData);
-    // let data;
-
-    // for(let i of localData)
-    // {
-    //     if(i.uname==sessionData)
-    //     {
-    //         data=i;
-    //         break;
-
-    //     }
-    // } 
   
    // document.getElementById("name").value= data.uname;
 
     data.todoObj.push(newData);
     localStorage.setItem("values",JSON.stringify(localData));
-    // showData();
+    clearList();
+    showData();
     
 
 }
 
 function showData(){
     
-    // let sessionData = sessionStorage.getItem("values");
-    // let localData = JSON.parse(localStorage.getItem("values"));
-    let data;
     let todoItems=[];
     let row;
-
-    for(let i of localData)
-    {
-        if(i.uname==sessionData)
-        {
-            data=i;
-            break;
-
-        }
-    } 
-
     let list = document.getElementById("table");
 
     todoItems = data.todoObj;
@@ -89,8 +62,35 @@ function showData(){
     {
         row = document.createElement('tr');
 
-        row.innerHTML ='<td></td><td>'+ todoItems[i].task +'</td><td>'+ todoItems[i].date +'</td><td></td><td>'+ todoItems[i].reminder +'</td><td>'+ todoItems[i].public +'</td><td></td> ';
+
+        row.innerHTML ='<td><input type="checkbox" id="markDone" value="Yes"></td><td>'+ todoItems[i].task +'</td><td>'+ todoItems[i].category +'</td><td>'+ todoItems[i].date +'</td><td>'+getStatus()+'</td><td>'+ todoItems[i].reminder +'</td><td>'+ todoItems[i].public +'</td><td><input type="button" value="Edit" onclick=()></td>';
         list.appendChild(row);
 
     }                
+}
+
+function clearList(){
+    document.getElementById("table").innerHTML="";
+}
+
+function deleteTask()
+{
+    let tableData=document.getElementById("table")
+    let allCheckedData=tableData.getElementsByTagName("input");
+    for(let i=allCheckedData.length-1; i >= 0; i--)
+    {
+        if(allCheckedData[i].checked)
+        {
+            document.getElementById("table").deleteRow(i);
+            data.todoObj.splice(i,1);
+        }
+
+    }
+    localStorage.setItem("values",JSON.stringify(localData));
+
+}
+
+function getStatus(){
+    let 
+    if()
 }

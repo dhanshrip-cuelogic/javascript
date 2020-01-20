@@ -12,6 +12,7 @@
     <body>
         <header>
                 <input type="button" id="profile" value="Profile" onclick=redirect();>
+                <input type="button" value="Delete" onclick=deleteTask();>
                 <div class="heading">
                     <input type="text" id="name" disabled>
                     <input type="button" id="logout" value="LOGOUT" onclick=backToLogin()>
@@ -20,7 +21,8 @@
 
 
                 <div class="container">
-                    <div class="list">
+                    <div class="list">​
+
                         <div class="head">
                             <h1>TO DO - LIST</h1>
                         </div>
@@ -28,6 +30,7 @@
                             <thead >
                                 <th>Mark Done</th>
                                 <th>Task</th>
+                                <th>Category</th>
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Reminder</th>
@@ -39,9 +42,12 @@
 
                         </table>
 
+
                         <table class="addRow">
+                            <thead class="head" style=" color: white;font-family: Arial, Helvetica, sans-serif;"><th>ADD TASK</th></thead>
                             <thead>
                                 <th>Task</th>
+                                <th>Category</th>
                                 <th>Date</th>
                                 <th>Reminder</th>
                                 <th>Public</th>
@@ -51,10 +57,12 @@
 
                             <tr>
                                 <td><input type="text" id="task" placeholder="Task"></td>
+                                <td><input type="text" id="category" placeholder="Category"></td>
                                 <td><input type="date" id="date" placeholder="Date"></td>
-                                <td><input type="checkbox" id="check"></td>
+                                <td><input type="checkbox" id="check" value="Yes"></td>
                                 <td><input type="radio" id="public" value="Yes"></td>
                                 <td><input type="button" value="Add" onclick=insertRow()></td>
+
                             </tr>
                         </table>
                         
