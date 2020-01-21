@@ -8,6 +8,7 @@ function getData() {
     let add= document.getElementById("address").value;
     let pass= document.getElementById("password").value;
     let confirmPass = document.getElementById("confirmPass").value;
+    // let profileimg=document.getElementById("profileimg").value;
     let gender;
 
     let regexPass= /([A-Z]+)([a-z]?.*)([!@#\$%\^&\*\.].*)([0-9].*)/;
@@ -20,6 +21,8 @@ function getData() {
     temp=checkuname(uname);
     
     genderValue= checkGender();
+
+    let profile = sessionStorage.getItem("displayPicture");
 
     if(pass!=confirmPass){
         alert("Please type same password in both fields.");
@@ -57,6 +60,7 @@ function getData() {
             gender:gender,
             add:add,
             pass:pass,
+            profileimg:profile,
             todoObj: []
         };
     
@@ -101,4 +105,18 @@ function checkGender(){
         return (false);
     }
 
+}
+function uploadImg()
+{
+    let Image = document.getElementById("profileimg").files[0];
+
+    let imagereader = new FileReader();
+    imagereader.readAsDataURL(Image);
+
+    imagereader.onload = function ()
+    {
+        let imgdata = imagereader.result;
+        sessionStorage.setItem("displayPicture", imgdata);
+        document.getElementById("profilePic").src = imgdata;
+    };
 }

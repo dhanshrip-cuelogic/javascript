@@ -41,17 +41,26 @@ header{
     margin-right: 25px;
     vertical-align: top;
 }
-.profilePic{
+/* .profilePic{
     display: inline-block;
     width: 15%;
     border: 1px solid black;
     height: 80px;
+} */
+.profileBox{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    /* border: 1px solid black; */
+    /* vertical-align: middle;
+    margin-left: 20px; */
+
 }
 
 .container{
     width: 100%;
     /* border: 1px solid black; */
-    margin-top: 50px;
+    margin-top: 10px;
 }
 h1{
     display: inline-block;
